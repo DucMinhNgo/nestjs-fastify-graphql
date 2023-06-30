@@ -13,10 +13,10 @@ async function bootstrap() {
   );
 
   // Getting configuration from environment
-  const configService = app.get(ConfigService);
-  const port = configService.get('port');
+  // const configService = app.get(ConfigService);
+  // const port = configService.get('port');
 
-  await app.listen(port, '0.0.0.0');
+  await app.listen(3333, '0.0.0.0');
 }
 
 bootstrap();
