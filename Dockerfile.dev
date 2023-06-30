@@ -1,0 +1,16 @@
+FROM node:18-alpine3.16
+
+ENV VERSION 0.0.1
+RUN apk add --update-cache --no-cache\
+  git bash
+
+RUN mkdir /soqura-backend
+WORKDIR /soqura-backend
+COPY package*.json ./
+RUN yarn install
+COPY . .
+# RUN yarn prisma generate
+
+EXPOSE 4000
+CMD yarn start:dev
+
